@@ -35,11 +35,15 @@ In general, this part may include the following but not limited to aspects:
 - Test coverage (if applicable).
 - Test results.
 
-### 2.4 References
+### 2.4 Review Points
+
+If you have some things that want to bring attention to the reviewers, list them here.
+
+### 2.5 References
 
 In general, this part provides all the related links that the previous parts can use.
 
-#### 2.4.1 General Formatting
+#### 2.5.1 General Formatting
 
 In general, there may be three types of references:
 
@@ -66,7 +70,7 @@ References:
 - [2] [Optimus Whitepaper](https://www.nvidia.com/object/LO_optimus_whitepapers.html)
 ```
 
-#### 2.4.2 Links Formatting
+#### 2.5.2 Links Formatting
 
 It is recommended to refer to a commit's SHA in its short form. See ["Commit SHAs"](https://help.github.com/articles/autolinked-references-and-urls/#commit-shas) for more details.
 
