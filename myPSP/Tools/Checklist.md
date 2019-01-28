@@ -11,6 +11,12 @@
   - Note the difference between a "task" and a "situation". For example, most of the Linux tools focus on **one task** but their interfaces are flexible enough to handle **many situations**.
   - A counter-example is: When I designed the `AddColumn` database migration class, I made the interface to take in arguments like `data_type`, `nullable`, `default_value`,etc.. This forces the user to use the  class only when they need to define the column with the given arguments. In other words, the interface only fits a limited number of "situations". Later I refined the interface to take a much more broader `column_definition` which the user can give whatever he/she wants to define the column. Sure, the user has more responsibility to ensure its correctness, but this is a balance between "making the interface more flexible" and "making the interface harder to be misused".
 
+## General Programming
+
+- [ ] Never lose error/exception information for debugging.
+  - When catching an exception, always record the execution information (e.g., `sys.exc_info()` in Python).
+  - When handling an error exit code, always record the `errno` information.
+
 ## Testing
 
 - Unit tests:
