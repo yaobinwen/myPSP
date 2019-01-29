@@ -130,3 +130,4 @@ This commit fixes:
 - [ ] chown: Consider both user and group.
 - [ ] Use Ansible playbooks for machine deployment.
   - Playbooks are supposed to be idempotent so if they are written correctly, you can fix your installation by iteratively refining the playbooks. The **point** is: try to avoid manual work because it's hardly repeatable.
+- [ ] The log messages must reflect what is actually happening. For example, in the statements `log('Data is moved to the back of queue'); move_to_back(data);`, the log message is inaccurate the actual movement happens after this message. A better message is `log('Moving data to the back of queue');`.
