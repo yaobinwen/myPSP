@@ -26,3 +26,13 @@ The folder `myPSP` has content as follows:
 The flowchart of these artifacts is shown as follows:
 
 ![myPSP flowchart](https://raw.githubusercontent.com/yaobinwen/myPSP/master/myPSP-flowchart.png)
+
+## Scientific Method
+
+The **Scientific Method** is a structured process to explore uncharted territory of science. The fields of computer science and engineering can apply it, too.
+
+![Scientific Method](https://raw.githubusercontent.com/yaobinwen/myPSP/master/scientific_method.png)
+
+(Source: [Steps of the Scientific Method](https://www.sciencebuddies.org/science-fair-projects/science-fair/steps-of-the-scientific-method))
+
+The Scientific Method may not be useful if you already know what you want to build generally, but is useful when you are researching you have no idea of. This method gives you a clear process to follow and to verify what works and does not work for you. The key point is: when you are down into the [rabbit hole](https://en.wikipedia.org/wiki/Rabbit_hole), don't go further and further off track. Instead, always limit the scope of current work, review the progress periodically to decide if you should stop or move on.
