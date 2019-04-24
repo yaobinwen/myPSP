@@ -1,8 +1,9 @@
 import Layout from '../components/Layout'
+import TaskList from '../components/TaskList'
 
 const Index = props => (
   <Layout>
-    <p>myPSP Assistant</p>
+    <TaskList />
   </Layout>
 )
 
