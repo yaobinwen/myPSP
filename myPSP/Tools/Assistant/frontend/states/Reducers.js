@@ -7,7 +7,7 @@ const initialState = {
   }
 }
 
-function taskList (state = initialState.tasks, action) {
+function tasks (state = initialState.tasks, action) {
   switch (action.type) {
     case actions.ADD_TASK:
       // Fall through
@@ -23,7 +23,7 @@ function taskList (state = initialState.tasks, action) {
 }
 
 const appState = combineReducers({
-  taskList
+  tasks
 })
 
 export default appState

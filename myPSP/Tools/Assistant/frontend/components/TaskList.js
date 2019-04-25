@@ -1,11 +1,40 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import * as actions from '../states/Actions'
 
-class TaskList extends Component {
+class _TaskList extends Component {
   render () {
     return (
-      <p>Task List</p>
+      <div>
+        <p>Task List</p>
+        <ul>
+          {
+            Object.keys(this.props.tasks).map((taskID) => (
+              <li> {this.props.tasks[taskID].name} </li>
+            ))
+          }
+        </ul>
+      </div>
     )
   }
 }
 
-export default TaskList
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+    tasks: state.tasks
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAddTask: (name) => dispatch(actions.addTask(name)),
+    onRemoveTask: (id) => dispatch(actions.removeTask(id)),
+    onUpdateTask: (id, newName) => dispatch(actions.updateTask(id, newName))
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(_TaskList)
