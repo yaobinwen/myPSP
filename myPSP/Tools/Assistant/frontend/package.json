@@ -19,5 +19,19 @@
   "devDependencies": {
     "enzyme": "^3.9.0",
     "jest": "^24.7.1"
+  },
+  "standard": {
+    "globals": [
+      "afterAll",
+      "afterEach",
+      "beforeAll",
+      "beforeEach",
+      "describe",
+      "expect",
+      "fetch",
+      "it",
+      "jest",
+      "test"
+    ]
   }
 }
