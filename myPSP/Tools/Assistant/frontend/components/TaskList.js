@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../states/Actions'
+import TaskEntry from './TaskEntry'
 
 class _TaskList extends Component {
   render () {
     return (
       <div>
         <p>Task List</p>
-        <ul>
-          {
-            Object.keys(this.props.tasks).map((taskID) => (
-              <li> {this.props.tasks[taskID].name} </li>
-            ))
-          }
-        </ul>
+        {
+          Object.keys(this.props.tasks).map((taskID) => (
+            <TaskEntry
+              taskName={this.props.tasks[taskID].name}
+            />
+          ))
+        }
       </div>
     )
   }
