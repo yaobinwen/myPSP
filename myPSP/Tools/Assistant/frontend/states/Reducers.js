@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import * as actions from './Actions.js'
+import * as env from '../env'
+import { prepopulatedTasks } from '../tests/helpers/TaskHelper'
 
 const initialState = {
-  tasks: {
-    // Empty
-  }
+  tasks: (env.isProduction() ? {} : prepopulatedTasks())
 }
 
 function tasks (state = initialState.tasks, action) {
