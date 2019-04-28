@@ -10,9 +10,7 @@ class _TaskList extends Component {
         <p>Task List</p>
         {
           Object.keys(this.props.tasks).map((taskID) => (
-            <TaskEntry
-              taskName={this.props.tasks[taskID].name}
-            />
+            <TaskEntry task={this.props.tasks[taskID]} />
           ))
         }
       </div>
