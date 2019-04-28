@@ -1,3 +1,9 @@
+export const STATUS = {
+  OPEN: 'OPEN',
+  IN_PROGRESS: 'IN_PROGRESS',
+  DONE: 'DONE'
+}
+
 class Task {
   constructor (info) {
     // TODO(ywen): Make sure 'info' has all the required fields.
