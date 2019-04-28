@@ -5,8 +5,9 @@
  */
 
 import React, { Component } from 'react'
-import { Button, Colors, Divider, Icon } from '@blueprintjs/core'
+import { Button, Colors, Divider, Icon, MenuItem } from '@blueprintjs/core'
 import { Select } from '@blueprintjs/select'
+import { STATUS } from '../models/task'
 
 const Style = {
   taskEntry: {
@@ -36,9 +37,12 @@ class TaskTitleLine extends Component {
   }
 }
 
-function taskStatusRender () {
+function taskStatusRender (taskStatus) {
   return (
-    <div>task status</div>
+    <MenuItem
+      key={taskStatus}
+      label={taskStatus}
+    />
   )
 }
 
@@ -46,7 +50,7 @@ class TaskStatus extends Component {
   render () {
     return (
       <Select
-        items={[1, 2, 3]}
+        items={Object.keys(STATUS).map(name => STATUS[name])}
         itemRenderer={taskStatusRender}
       >
         <Button minimal>{this.props.task.status()}</Button>
