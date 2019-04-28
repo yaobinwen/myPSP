@@ -19,7 +19,6 @@ class _TaskList extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     tasks: state.tasks
   }
