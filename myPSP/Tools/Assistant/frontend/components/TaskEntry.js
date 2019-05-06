@@ -11,16 +11,16 @@ import { STATUS } from '../models/task'
 
 const Style = {
   taskEntry: {
-    'margin-top': '10px',
-    'margin-bottom': '10px'
+    marginTop: '10px',
+    marginBottom: '10px'
   },
   taskID: {
     color: Colors.BLUE3,
-    'margin-left': '20px'
+    marginLeft: '20px'
   },
   taskName: {
     color: Colors.BLUE3,
-    'margin-left': '20px'
+    marginLeft: '20px'
   }
 }
 
