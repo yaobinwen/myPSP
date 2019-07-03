@@ -18,7 +18,7 @@ This is **NOT** **how** the PR is implemented or **why** the PR is needed, both 
 
 The elaboration part follows the summary. It can be as short as one sentence or as long as multiple paragraphs.
 
-In general, this part may include the following but not limited to aspects:
+In general, this part may include the following, but not limited to, aspects:
 
 - **The background** talks about **why** this PR is needed. It may also give references to the related commits, issues, or external links. Please refer to "2.4 Organizing References" for how to write a reference.
 - **Design decisions** talks about why a particular design decision is made that way, such as the trade-offs.
@@ -35,15 +35,19 @@ In general, this part may include the following but not limited to aspects:
 - Test coverage (if applicable).
 - Test results.
 
-### 2.4 Review Points
+### 2.4 Code Style Checker Results
+
+This part should list the code style checker results.
+
+### 2.5 Review Points
 
 If you have some things that want to bring attention to the reviewers, list them here.
 
-### 2.5 References
+### 2.6 References
 
 In general, this part provides all the related links that the previous parts can use.
 
-#### 2.5.1 General Formatting
+#### 2.6.1 General Formatting
 
 In general, there may be three types of references:
 
@@ -70,7 +74,7 @@ References:
 - [2] [Optimus Whitepaper](https://www.nvidia.com/object/LO_optimus_whitepapers.html)
 ```
 
-#### 2.5.2 Links Formatting
+#### 2.6.2 Links Formatting
 
 It is recommended to refer to a commit's SHA in its short form. See ["Commit SHAs"](https://help.github.com/articles/autolinked-references-and-urls/#commit-shas) for more details.
 
