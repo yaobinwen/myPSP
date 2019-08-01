@@ -100,6 +100,10 @@ This commit fixes:
 - Misc.
   - [ ] Use `git diff` or `git diff --cached` to read through the diff content as a quick self-review.
 
+## C++
+
+- [ ] `clang-format` check must pass.
+
 ## Python
 
 - [ ] `PEP8 (v1.4.6)` check must pass.
