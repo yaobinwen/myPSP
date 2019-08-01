@@ -5,17 +5,22 @@
 - [ ] `Whac-A-Mole`: Only solve a problem when it arises; have not developed a permanent solution for the root cause.
   - When I was working on the unit test failures caused by incorrectly using the `libzmq.a` in the Teigha's library, I simply removed the `libzmq.a` file to avoid the problem. However, Teigha's `lib` folder has many other non-Teigha static library files which, even if they don't cause any problems now, may cause problems in the future. The **correct solution** would be to keep the Teigha library files we actually use and remove the rest.
 
-## Design
-
-- [ ] Try **NOT** to make the interface too specific to one situation.
-  - Note the difference between a "task" and a "situation". For example, most of the Linux tools focus on **one task** but their interfaces are flexible enough to handle **many situations**.
-  - A counter-example is: When I designed the `AddColumn` database migration class, I made the interface to take in arguments like `data_type`, `nullable`, `default_value`,etc.. This forces the user to use the  class only when they need to define the column with the given arguments. In other words, the interface only fits a limited number of "situations". Later I refined the interface to take a much more broader `column_definition` which the user can give whatever he/she wants to define the column. Sure, the user has more responsibility to ensure its correctness, but this is a balance between "making the interface more flexible" and "making the interface harder to be misused".
-
 ## General Programming
 
+- [ ] Avoid duplicating code whenever possible.
+  - If duplication is inevitable, add `DUPE` or `XREF` comment to refer to the original code so others will know where to find all the copies.
+  - Also add a comment to explain why the duplication is inevitable at that time, so the code reviewers will know you have already tried.
 - [ ] Never lose error/exception information for debugging.
   - When catching an exception, always record the execution information (e.g., `sys.exc_info()` in Python).
   - When handling an error exit code, always record the `errno` information.
+- [ ] Think from the user's perspective to write the error or help messages.
+  - For example, when we say in a help message that a variable is about the "size" of something, we should explain what the "size" means and whether it has a unit.
+  - The log messages must reflect what is actually happening. For example, in the statements `log('Data is moved to the back of queue'); move_to_back(data);`, the log message is inaccurate the actual movement happens after this message. A better message is `log('Moving data to the back of queue');`.
+- [ ] Try **NOT** to make the interface too specific to one situation.
+  - Note the difference between a "task" and a "situation". For example, most of the Linux tools focus on **one task** but their interfaces are flexible enough to handle **many situations**.
+  - A counter-example is: When I designed the `AddColumn` database migration class, I made the interface to take in arguments like `data_type`, `nullable`, `default_value`,etc.. This forces the user to use the  class only when they need to define the column with the given arguments. In other words, the interface only fits a limited number of "situations". Later I refined the interface to take a much more broader `column_definition` which the user can give whatever he/she wants to define the column. Sure, the user has more responsibility to ensure its correctness, but this is a balance between "making the interface more flexible" and "making the interface harder to be misused".
+- [ ] Add copyright information when needed.
+- [ ] Add modelines in favor of `vim` when needed.
 
 ## Testing
 
@@ -97,8 +102,9 @@ This commit fixes:
 
 ## Python
 
-- Code style:
-  - [ ] PEP8 (1.4.6) passes.
+- [ ] `PEP8 (v1.4.6)` check must pass.
+- [ ] Write Python 2 & 3 compatibile code.
+  - Use all the possible `__future__` features including `absolute_import`, `division`, `print_function`, and `unicode_literals`.
 - String manipulation:
   - [ ] Use `six.moves.shlex_quote` to quote strings.
 
@@ -106,7 +112,7 @@ This commit fixes:
 
 - Code style:
   - [ ] `npm run lint` passes.
-  - [ ] `standard (11.0.1)` passes.
+  - [ ] `standard (v11.0.1)` passes.
 - Common pitfalls:
   - [ ] Shallow-cloning vs. deep-cloning: Double check which one is desired.
 
@@ -114,21 +120,25 @@ This commit fixes:
 
 - [ ] Write POSIX-compliant shell scripts.
   - See [here](http://sites.harvard.edu/~lib113/reference/unix/portable_scripting.html) for a solution.
-- [ ] Always remember the **error checking** for the shell code.
+  - Use [`shellcheck`](https://www.shellcheck.net/) to check bash-ism. If needed, use the online tool which should be the latest version to check the script.
+- [ ] Add **error handling** to the exit code of a command.
+- [ ] Check command line syntax at the top and error out with a usage message (e.g., `test $# -eq 2 || ...`).
+- [ ] Examine the quotation of the variables.
 - [ ] In a `rm -rf` operation, if a variable is the first part of the path, such as `$FOO/bar`, one must be cautious that `$FOO` could be empty which results in the removal of `/bar`. If `/bar` happens to be a system folder, that will be disastrous. Use `${FOO:?not set}/bar` to prevent from deleting it accidentally.
 
 ## Misc
 
 - [ ] All the `TODO(ywen)` and `FIXME(ywen)` items have been resolved.
+  - Remember to check **ALL** the files: sometimes a `TODO` may be added to a file without an extension (such as `SConscript`).
 - [ ] **Security**: The code is not vulnerable to security attacks.
 - [ ] **Quote**: In some situations, the strings must be escaped correctly:
   - [ ] When assigning a string to a environmental variable, quotation is necessary.
   - [ ] Use consistent variable names.
 - [ ] Think in URLs, not IP + port.
-- [ ] Date & time: Try to use ISO 8601 format, which is specified by `date -I`.
-- [ ] Date & time: Always consider timezone.
-- [ ] chown: Consider both user and group.
+- [ ] Date & time:
+  - Try to use ISO 8601 format, which is specified by `date -I`.
+  - Always consider timezone.
+- [ ] `chown`: Consider both user and group.
 - [ ] Use Ansible playbooks for machine deployment.
   - Playbooks are supposed to be idempotent so if they are written correctly, you can fix your installation by iteratively refining the playbooks. The **point** is: try to avoid manual work because it's hardly repeatable.
-- [ ] The log messages must reflect what is actually happening. For example, in the statements `log('Data is moved to the back of queue'); move_to_back(data);`, the log message is inaccurate the actual movement happens after this message. A better message is `log('Moving data to the back of queue');`.
 - [ ] **Pull Request title**: Describe the user-visible behavior that you are fixing instead of what you changed to fix it.
