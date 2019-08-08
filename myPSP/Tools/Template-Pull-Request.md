@@ -41,7 +41,7 @@ This part should list the code style checker results.
 
 ### 2.5 Review Points
 
-If you have some things that want to bring attention to the reviewers, list them here.
+If you have something that you want to bring attention to the reviewers, list them here.
 
 ### 2.6 Test Build
 
