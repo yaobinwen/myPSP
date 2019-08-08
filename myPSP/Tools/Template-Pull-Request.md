@@ -43,11 +43,21 @@ This part should list the code style checker results.
 
 If you have some things that want to bring attention to the reviewers, list them here.
 
-### 2.6 References
+### 2.6 Test Build
+
+If a deployed build is available for the reviewers to test, put the link to the build here.
+
+Meanwhile, also elaborate how to test the patch, for example:
+
+- Where to find the test data.
+- What are the conditions that must be met in order to test a behavior.
+- What are the potential difficulties or obstacles of testing the behaviors.
+
+### 2.7 References
 
 In general, this part provides all the related links that the previous parts can use.
 
-#### 2.6.1 General Formatting
+#### 2.7.1 General Formatting
 
 In general, there may be three types of references:
 
@@ -74,7 +84,7 @@ References:
 - [2] [Optimus Whitepaper](https://www.nvidia.com/object/LO_optimus_whitepapers.html)
 ```
 
-#### 2.6.2 Links Formatting
+#### 2.7.2 Links Formatting
 
 It is recommended to refer to a commit's SHA in its short form. See ["Commit SHAs"](https://help.github.com/articles/autolinked-references-and-urls/#commit-shas) for more details.
 
