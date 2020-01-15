@@ -103,6 +103,10 @@ This commit fixes:
 ## C++
 
 - [ ] `clang-format` check must pass.
+- [ ] Use `m_variable` naming convention.
+- [ ] Comment out the unused parameters to avoid unreferenced parameter warnings.
+- [ ] Class accessor modifiers, `private`, `protected`, and `public`, should appear only once.
+- [ ] Templates should vary on types, not (mainly) on value of numbers.
 
 ## Python
 
