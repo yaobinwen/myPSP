@@ -107,6 +107,7 @@ This commit fixes:
 - [ ] Comment out the unused parameters to avoid unreferenced parameter warnings.
 - [ ] Class accessor modifiers, `private`, `protected`, and `public`, should appear only once.
 - [ ] Templates should vary on types, not (mainly) on value of numbers.
+- [ ] Destructors should never throw. Implement another method to do the cleanup and let it throw. In the destructor, call this method and catch the exceptions.
 
 ## Python
 
