@@ -102,12 +102,30 @@ This commit fixes:
 
 ## C++
 
-- [ ] `clang-format` check must pass.
+Refer to [C++ Core Guidelines](http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines).
+
+### Classes
+
 - [ ] Use `m_variable` naming convention.
-- [ ] Comment out the unused parameters to avoid unreferenced parameter warnings.
 - [ ] Class accessor modifiers, `private`, `protected`, and `public`, should appear only once.
-- [ ] Templates should vary on types, not (mainly) on value of numbers.
 - [ ] Destructors should never throw. Implement another method to do the cleanup and let it throw. In the destructor, call this method and catch the exceptions.
+
+### Error Handling
+
+- [ ] Catch exceptions as mutable objects, not `const reference`. (Although the _C++ Core Guidelines_ think the constant reference is better, it is currently agreed to use non-const reference in my organization.)
+- [ ] Do not catch all exceptions (`std::exception`). Only catch the necessary ones which can usually be seen from the context.
+
+### Templates
+
+- [ ] Templates should vary on types, not (mainly) on value of numbers.
+
+### Miscellaneous
+
+- [ ] Use `clang-format`.
+- [ ] Update the copyright information in the source files.
+- [ ] Arrange `#include` in the order of: project header files, followed by third-party header files, followed by standard header files.
+- [ ] Use the syntax `namespace A::B::C ...` to define nested namespaces.
+- [ ] Comment out the unused parameters to avoid unreferenced parameter warnings.
 
 ## Python
 
