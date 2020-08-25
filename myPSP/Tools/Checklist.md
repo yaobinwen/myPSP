@@ -21,6 +21,7 @@
   - A counter-example is: When I designed the `AddColumn` database migration class, I made the interface to take in arguments like `data_type`, `nullable`, `default_value`,etc.. This forces the user to use the  class only when they need to define the column with the given arguments. In other words, the interface only fits a limited number of "situations". Later I refined the interface to take a much more broader `column_definition` which the user can give whatever he/she wants to define the column. Sure, the user has more responsibility to ensure its correctness, but this is a balance between "making the interface more flexible" and "making the interface harder to be misused".
 - [ ] Add copyright information when needed.
 - [ ] Add modelines in favor of `vim` when needed.
+- [ ] Avoid changing the current working directory.
 
 ## Testing
 
